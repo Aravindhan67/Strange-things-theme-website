@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aventrix'25 – The Upside Down Tech Vibe</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+</head>
+<body class="page-main">
+  <audio id="bg-music" autoplay loop hidden>
+  <source src="stranger_things.mp3" type="audio/mp3">
+</audio>
+
+<div class="upside-down-transition" id="transition"></div>
+
+  <!-- TOP NAV -->
+  <header class="nav">
+    <div class="nav-logo glitch" data-text="Aventrix'25">
+      Aventrix'25
+    </div>
+    <nav>
+       <a href="main.html">Home</a>
+      <a href="tech.html">Events</a>
+      <a href="agenda.html">Event Details</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <!-- YELLOW SCROLL BAR -->
+  <div class="ticker main-ticker">
+    <div class="ticker-inner">
+      DECEMBER 24 &nbsp; # &nbsp; Aventrix'25 &nbsp; # &nbsp; 13K PRIZE POOL &nbsp; # &nbsp;
+      DECEMBER 24 &nbsp; # &nbsp; Aventrix'25 &nbsp; # &nbsp; 13K PRIZE POOL &nbsp; #
+    </div>
+  </div>
+
+  <!-- CENTER CARD -->
+  <main class="main-wrapper">
+    <section class="main-card">
+      <header class="main-card-header">
+        <p class="college-line">KONGU ENGINEERING COLLEGE</p>
+        <p class="dept-line">DEPARTMENT OF INFORMATION TECHNOLOGY</p>
+        <p class="present-line">Presents</p>
+
+        <!-- 👇 removed "glitch" class here -->
+        <h1 class="main-title">
+          Aventrix'25
+        </h1>
+        <h2 class="main-subtitle">The Upside Down Tech Vibe</h2>
+
+        <p class="main-desc">
+          Aventrix'25 is a Stranger Things inspired symposium hosted by the
+          CSI Club of KEC. Fight bugs from the Upside Down, crack creepy puzzles and
+          showcase your skills across 4 technical and 4 non-technical events.
+        </p>
+      </header>
+
+        <section class="main-events">
+          <h3 class="events-heading">EVENTS</h3>
+        
+            <hr class="events-separator" />
+          <div class="main-events-row" style="display: flex; justify-content: center;">
+            <!-- TECH CARD -->
+            <article class="main-event-card">
+          <div class="event-img-wrap">
+            <!-- add your image here -->
+            <img src="tech.jpg" alt="Technical Events" />
+          </div>
+          <div class="event-card-body">
+            <p>
+              Mind Flayer Coding, Vecna's Debug Room, Hawkins Hacker Hunt and
+              Upside Down UI Challenge.
+            </p>
+            <a href="tech.html" class="btn btn-primary small-btn">View →</a>
+          </div>
+            </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+
+    <!-- LEFT COLUMN -->
+    <div class="footer-col footer-col-left">
+      <h4 class="footer-brand">AVENTRIX'24</h4>
+      <p class="footer-desc">
+        The Department of Computer Society of India at Kongu Engineering College, Perundurai hosts a highly enjoyable symposium.
+      </p>
+      <p class="footer-cta">
+        <a href="main.html">Celebrate Innovation with AVENTRIX'24</a>
+      </p>
+    </div>
+
+    <!-- MIDDLE COLUMN -->
+    <div class="footer-col footer-col-mid">
+      <h5>Links</h5>
+      <ul class="footer-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="main.html">Events</a></li>
+        <li><a href="agenda.html">Agenda</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="footer-col footer-col-right">
+      <h5>Contact</h5>
+      <p class="contact-line">📞 +91 98765 43210, +91 94444 77788</p>
+      <p class="contact-line">✉️ csiclub2025@gmail.com</p>
+      <p class="contact-line">📍 KONGU ENGINEERING COLLEGE, Perundurai, Erode - 638 052, Tamilnadu, India</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER BOTTOM -->
+  <div class="footer-bottom">
+    <p class="footer-copy">© AVENTRIX'24. All Rights Reserved</p>
+
+    <div class="made-by">Made with ❤️ by <strong>team</strong></div>
+
+    <div class="footer-socials">
+      <a href="#" target="_blank" class="social-icon">
+        <img src="assets/instagram.png" alt="Instagram">
+      </a>
+      <a href="#" target="_blank" class="social-icon">
+        <img src="assets/linkedin.png" alt="LinkedIn">
+      </a>
+    </div>
+  </div>
+</footer>
+
+  
+</body>
+<script>
+  const music = document.getElementById("bg-music");
+
+  // Restore previous volume/mute state
+  const savedMuted = localStorage.getItem("musicMuted");
+
+  if (savedMuted === "true") {
+    music.muted = true;
+  } else {
+    music.muted = false;
+  }
+
+  // Unmute on first user interaction
+  document.addEventListener("click", () => {
+    if (localStorage.getItem("hasInteracted") !== "true") {
+      music.muted = false;
+      localStorage.setItem("hasInteracted", "true");
+      localStorage.setItem("musicMuted", "false");
+    }
+  });
+
+  // Save mute/unmute state automatically
+  music.onvolumechange = () => {
+    localStorage.setItem("musicMuted", music.muted);
+  };
+</script>
+
+</html>
