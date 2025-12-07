@@ -336,3 +336,143 @@ body {
         font-size: 0.75rem;
     }
 }
+/* =========================
+   MOBILE FIXES (<= 768px)
+   ========================= */
+
+@media (max-width: 768px) {
+  /* Top glass banner: stack + center */
+  .top-banner {
+    max-width: 100%;
+    margin: 10px auto 0;
+    padding: 10px 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .banner-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .college-name {
+    font-size: 0.95rem;
+  }
+
+  .club-name {
+    font-size: 0.78rem;
+  }
+
+  /* Nav: center items, smaller padding */
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 8px;
+  }
+
+  .nav-logo {
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+  }
+
+  .nav nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .nav a {
+    padding: 6px 8px;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* Fix for nav underline pseudo elements */
+  .nav a::before {
+    bottom: -3px;
+    width: 80%;
+  }
+
+  .nav a::after {
+    bottom: -6px;
+    height: 3px;
+  }
+
+  /* Agenda layout: card fits screen */
+  .agenda-main {
+    padding: 1.5rem 0.8rem 2.5rem;
+  }
+
+  .agenda-card {
+    padding: 1.2rem 1rem;
+    border-radius: 12px;
+  }
+
+  .agenda-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.16em;
+  }
+
+  .agenda-intro {
+    font-size: 0.85rem;
+  }
+
+  /* Agenda table: no weird alignment, allow horizontal scroll instead of breaking */
+  .agenda-wrap {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+
+  .agenda-table {
+    min-width: 600px;       /* keep proper columns */
+    font-size: 0.8rem;
+  }
+
+  .agenda-table thead th {
+    position: static;       /* remove sticky header on mobile */
+    padding: 8px 6px;
+  }
+
+  .agenda-table td {
+    padding: 8px 6px;
+  }
+
+  .btn.small {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+  }
+
+  /* Event detail page: stack image and text */
+  .event-detail-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem;
+  }
+
+  .event-image-col img {
+    max-height: 380px;
+  }
+
+  .event-detail-card {
+    padding-inline: 1rem;
+  }
+}
+
+/* Extra tiny screens */
+@media (max-width: 480px) {
+  .top-banner {
+    padding: 8px 10px;
+  }
+
+  .nav a {
+    font-size: 0.68rem;
+  }
+
+  .agenda-table {
+    min-width: 520px;
+  }
+}
