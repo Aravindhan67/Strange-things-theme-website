@@ -1,337 +1,291 @@
-/* ===========================
-   GLOBAL LANDING PAGE STYLES
-   =========================== */
-
-body, html {
+/* =========================
+   GLOBAL RESET
+   ========================= */
+* {
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  font-family: Arial, sans-serif;
-  background: black;
+  box-sizing: border-box;
 }
 
-/* Background image */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #f5f5f5;
+  background: #000;
+  overflow: hidden;
+}
+
+/* =========================
+   LANDING / HERO SECTION
+   ========================= */
 .landing {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  background: url("bg.jpg") center/cover no-repeat;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.95)),
+    url("home page.webp") center center/cover no-repeat;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+  text-align: center;
+  padding: 10px 16px 18px;
 }
 
-/* Dark overlay */
-.landing-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(2px);
-  z-index: 1;
+/* bottom message */
+.bottom-text {
+  font-size: 0.75rem;
+  opacity: 0.7;
 }
 
-/* ===========================
-   TOP LOGO BANNER
-   =========================== */
-
+/* =========================
+   TOP GLASS BANNER
+   ========================= */
 .top-banner {
-  z-index: 5;
-  margin: 20px auto 0;
-  padding: 10px 30px;
-  background: rgba(40,40,40,0.55);
-  border-radius: 18px;
+  width: 55%;
+  max-width: 500px;
+  margin: 8px auto 0;
+  padding: 10px 20px;
+
   display: flex;
   align-items: center;
-  gap: 20px;
-  width: fit-content;
+  justify-content: space-between;
+  gap: 18px;
+
+  background: rgba(40, 40, 40, 0.45);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.45);
 }
 
 .banner-logo {
   width: 55px;
-  height: auto;
+  height: 55px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
 }
 
 .banner-text {
   text-align: center;
+  flex: 1;
 }
 
 .college-name {
-  color: white;
+  font-size: 1rem;
   font-weight: 700;
+  color: #ffffff;
   letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
 }
 
 .club-name {
-  font-size: 0.9rem;
-  color: #ddd;
+  margin-top: 2px;
+  font-size: 0.85rem;
+  color: #e8e8e8;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
 }
 
-/* ===========================
-   CENTER CONTENT
-   =========================== */
-
+/* =========================
+   CENTER TITLE + BUTTON
+   ========================= */
 .center-content {
-  z-index: 5;
-  text-align: center;
-  margin-top: -40px;
-}
-
-/* Tagline */
-.tagline {
-  font-size: 1.2rem;
-  color: white;
-  margin-top: 10px;
-}
-
-/* Button */
-.btn-assemble {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 12px 40px;
-  background: #ff1c1c;
-  color: white;
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: 0.2s;
-}
-
-.btn-assemble:hover {
-  background: #ff3f3f;
-  box-shadow: 0 0 12px red;
-}
-
-/* ===========================
-   FOOTER
-   =========================== */
-
-.bottom-text {
-  z-index: 5;
-  text-align: center;
-  color: #ccc;
-  font-size: 0.9rem;
-  padding-bottom: 20px;
-}
-
-/* ===========================
-   STRANGER THINGS TITLE
-   =========================== */
-
-.sth-hero {
+  flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  margin-top: 30px;
-  z-index: 10;
+  justify-content: center;
+  gap: 18px;
+  padding: 0 16px;
 }
 
-.sth-line {
-  width: 30%;
-  height: 6px;
-  background: linear-gradient(90deg, #ff2a2a, #ff5555);
-  border-radius: 6px;
-  box-shadow: 0 0 18px rgba(255,40,40,0.7);
-}
-
-.sth-title {
-  font-family: "Cinzel", serif;
-  font-weight: 900;
-  color: black;
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.sth-letter {
-  font-size: 3.5rem;
-  -webkit-text-stroke: 3px #ff1a1a;
-  text-shadow: 0 0 10px red, 0 0 30px red;
-}
-
-.sth-word {
-  font-size: 2.4rem;
-  -webkit-text-stroke: 2.5px #ff1a1a;
-}
-
-.sth-year {
-  font-size: 1rem;
-  display: block;
-  margin-top: 4px;
-  letter-spacing: 0.2em;
-  -webkit-text-stroke: 2px #ff1a1a;
-}
-
-/* Glow animation */
-@keyframes pulseGlow {
-  0%,100% { text-shadow: 0 0 12px red, 0 0 30px red; }
-  50% { text-shadow: 0 0 24px red, 0 0 60px red; }
-}
-.sth-title * {
-  animation: pulseGlow 3s ease-in-out infinite;
-}
-
-/* ===========================
-   RESPONSIVE FIXES
-   =========================== */
-
-@media (max-width: 768px) {
-  .sth-letter { font-size: 2.6rem; }
-  .sth-word { font-size: 1.8rem; }
-  .sth-year { font-size: 0.85rem; }
-  .top-banner { padding: 8px 20px; }
-  .banner-logo { width: 45px; }
-}
-
-@media (max-width: 420px) {
-  .sth-letter { font-size: 2rem; }
-  .sth-word { font-size: 1.4rem; }
-  .sth-year { font-size: 0.7rem; }
-  .top-banner { flex-direction: column; gap: 6px; }
-}
-/* ===========================
-   STRANGER THINGS TITLE — UPDATED
-   =========================== */
-
-.sth-hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  margin-top: 30px;
-  z-index: 10;
-}
-
-/* TOP NEON LINE */
-.sth-line.top {
-  width: 85%;
-  height: 6px;
-  background: red;
-  border-radius: 6px;
-  box-shadow: 0 0 18px red;
-}
-
-/* MAIN TITLE */
-.sth-title {
-  font-family: "Cinzel", serif;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: black;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 2.8rem;
-  -webkit-text-stroke: 3px #ff1a1a;
-  text-shadow: 0 0 10px red, 0 0 30px red;
-}
-
-/* Bigger A */
-.sth-A {
-  font-size: 3.3rem;
-}
-
-/* ===========================
-   BOTTOM DOUBLE LINE + YEAR
-   =========================== */
-
-.bottom-wrapper {
+/* Stranger Things style title block */
+.st-title {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.bottom-line {
-  width: 110px;
-  height: 6px;
-  background: red;
-  border-radius: 20px;
-  box-shadow: 0 0 14px red;
+.st-line {
+  height: 3px;
+  width: 80px;
+  background: #ff0000;
+  box-shadow:
+    0 0 12px #ff0000,
+    0 0 24px rgba(255, 0, 0, 0.7),
+    0 0 36px rgba(255, 0, 0, 0.5);
 }
 
-.year-center {
+/* text group */
+.st-text-group {
+  text-align: center;
+  line-height: 0.8;
+}
+
+/* Stranger Things style text */
+.st-text {
   font-family: "Cinzel", serif;
-  font-size: 1.2rem;
-  font-weight: 900;
-  letter-spacing: 2px;
-  -webkit-text-stroke: 2px red;
-  color: black;
-  text-shadow: 0 0 8px red, 0 0 20px red;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
+  color: #000;
+  -webkit-text-stroke: 1px #ff0000;
+
+  text-shadow:
+    0 0 10px #ff0000,
+    0 0 30px #ff0000,
+    0 0 60px rgba(255, 0, 0, 0.6);
+
+  animation: stGlow 3s ease-in-out infinite;
 }
 
-/* ===========================
-   RESPONSIVE
-   =========================== */
+/* main & sub word sizes */
+.main-word {
+  font-size: 3.2rem;
+}
 
-@media (max-width: 500px) {
-  .sth-title {
-    font-size: 2rem;
+.sub-word {
+  font-size: 1.8rem;
+  margin-top: -4px;
+}
+
+/* tagline */
+.tagline {
+  max-width: 24rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* button */
+.btn-assemble {
+  margin-top: 4px;
+  padding: 0.9rem 2.4rem;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  background: radial-gradient(circle at top, #ff4b4b, #8b0000);
+  box-shadow:
+    0 0 14px rgba(255, 0, 0, 0.9),
+    0 0 30px rgba(0, 0, 0, 1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-assemble:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 22px rgba(255, 0, 0, 1),
+    0 0 40px rgba(0, 0, 0, 1);
+}
+
+/* =========================
+   GLOW ANIMATION
+   ========================= */
+@keyframes stGlow {
+  0%,
+  100% {
+    text-shadow:
+      0 0 8px #ff0000,
+      0 0 18px #ff1a1a,
+      0 0 35px rgba(255, 0, 0, 0.6);
   }
-  .sth-A {
+  50% {
+    text-shadow:
+      0 0 25px #ff3a3a,
+      0 0 55px #ff0000,
+      0 0 90px rgba(255, 0, 0, 1);
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+@media (max-width: 768px) {
+  .top-banner {
+    width: 100%;
+    max-width: 90%;
+    padding: 8px 14px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+  }
+
+  .banner-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .college-name {
+    font-size: 0.95rem;
+  }
+
+  .club-name {
+    font-size: 0.78rem;
+  }
+
+  .st-line {
+    width: 55px;
+  }
+
+  .main-word {
     font-size: 2.4rem;
   }
-  .bottom-line {
-    width: 70px;
-    height: 5px;
+
+  .sub-word {
+    font-size: 1.4rem;
   }
-  .year-center {
-    font-size: 1rem;
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .btn-assemble {
+    padding: 0.8rem 2rem;
+    font-size: 0.8rem;
   }
 }
-/* TOP LINE – closer to AVENTRIX */
-.sth-line.top {
-  width: 40%;
-  height: 6px;
-  background: red;
-  border-radius: 6px;
-  box-shadow: 0 0 18px red;
-  margin-bottom: -10px;   /* pulls line downward */
-}
 
-/* MAIN TITLE */
-.sth-title {
-  font-family: "Cinzel", serif;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: black;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 2.8rem;
-  -webkit-text-stroke: 3px #ff1a1a;
-  text-shadow: 0 0 5px red, 0 0 5px red;
-  margin: -10px 0 -8px 0;  /* pulls title up and bottom line closer */
-}
+@media (max-width: 480px) {
+  .top-banner {
+    max-width: 95%;
+    padding: 8px 10px;
+  }
 
-/* BOTTOM LINES wrapper – move closer upward */
-.bottom-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: -8px;      /* pull lines UP */
-}
+  .banner-logo {
+    width: 36px;
+    height: 36px;
+  }
 
-/* Bottom neon line size */
-.bottom-line {
-  width: 110px;            /* slightly shorter lines */
-  height: 6px;
-  background: red;
-  border-radius: 20px;
-  box-shadow: 0 0 14px red;
-}
+  .main-word {
+    font-size: 2rem;
+  }
 
-/* Adjust year spacing */
-.year-center {
-  font-family: "Cinzel", serif;
-  font-size: 1.2rem;
-  font-weight: 900;
-  letter-spacing: 2px;
-  -webkit-text-stroke: 2px red;
-  color: black;
-  text-shadow: 0 0 8px red, 0 0 20px red;
-  margin: 0 4px;         /* reduced spacing between lines */
+  .sub-word {
+    font-size: 1.2rem;
+  }
+
+  .st-line {
+    width: 45px;
+  }
+
+  .tagline {
+    font-size: 0.82rem;
+  }
+
+  .bottom-text {
+    font-size: 0.7rem;
+  }
 }
