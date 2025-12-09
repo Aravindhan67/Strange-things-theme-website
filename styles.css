@@ -1741,3 +1741,34 @@ body {
     min-width: 520px;
   }
 }
+/* ============================
+   RESPONSIVE EVENT IMAGE FIX
+   ============================ */
+
+/* Default (Laptop & Desktop) */
+.event-image img {
+  width: 100%;
+  max-width: 420px;      /* fixed nice size for laptop */
+  height: 260px;        /* fixed height */
+  object-fit: cover;    /* crop without stretching */
+  border-radius: 14px;
+  display: block;
+  margin: auto;
+  box-shadow: 0 0 14px rgba(0,0,0,0.6);
+}
+
+/* ✅ TABLET (768px and below) */
+@media (max-width: 768px) {
+  .event-image img {
+    max-width: 320px;
+    height: 200px;
+  }
+}
+
+/* ✅ MOBILE (480px and below) */
+@media (max-width: 480px) {
+  .event-image img {
+    max-width: 95%;     /* fills mobile screen nicely */
+    height: 180px;     /* mobile-optimized height */
+  }
+}
