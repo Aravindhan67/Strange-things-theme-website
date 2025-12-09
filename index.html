@@ -2,32 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Aventrix'25 – Landing</title>
+  <title>Aventrix 2025 – Landing</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="splash.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- background music -->
+
+  <!-- Background Music -->
   <audio id="bg-music" autoplay loop hidden>
     <source src="stranger_things.mp3" type="audio/mp3">
   </audio>
 
+  <!-- Upside Down transition effect -->
   <div class="upside-down-transition" id="transition"></div>
 
-  <!-- FULL-SCREEN HERO -->
+  <!-- Fullscreen Hero -->
   <div class="landing">
-    <!-- dark overlay over background image -->
+
+    <!-- Dark Overlay -->
     <div class="landing-overlay"></div>
 
-    <!-- top banner like poster -->
+    <!-- Logo banner -->
     <header class="top-banner">
       <img src="csi logo2.png" class="banner-logo left-logo" alt="Left Logo">
-
+      
       <div class="banner-text">
         <div class="college-name">KONGU ENGINEERING COLLEGE</div>
         <div class="club-name">Computer Society of India</div>
@@ -36,47 +41,50 @@
       <img src="csi_logo.png" class="banner-logo right-logo" alt="Right Logo">
     </header>
 
-    <!-- center content -->
+    <!-- Center title & button -->
     <main class="center-content">
-      <div class="st-title">
-        <div class="st-line"></div>
 
-        <div class="st-text-group">
-          <h1 class="st-text main-word">AVENTRIX</h1>
-          <h2 class="st-text sub-word">2025</h2>
-        </div>
+      <div class="sth-hero">
 
-        <div class="st-line"></div>
-      </div>
+  <!-- TOP LINE (unchanged) -->
+  <div class="sth-line top"></div>
 
-      <p class="tagline">
-        Enter the Upside Down and be a part of the adventure.
-      </p>
+  <!-- MAIN TITLE -->
+  <h1 class="sth-title">
+    <span class="sth-letter sth-A">Aventrix</span>
+    
+  </h1>
 
-      <a href="main.html" class="btn-assemble">
-        THEY'RE COMING
-      </a>
-    </main>
-
-    <!-- bottom note -->
-    <footer class="bottom-text">
-      Scroll is disabled • Click the button to continue
-    </footer>
+  <!-- BOTTOM DOUBLE LINE WITH YEAR BETWEEN -->
+  <div class="bottom-wrapper">
+    <div class="bottom-line left"></div>
+    <span class="year-center">2025</span>
+    <div class="bottom-line right"></div>
   </div>
 
+</div>
+
+
+      <p class="tagline">Enter the Upside Down and be a part of the adventure.</p>
+
+      <a href="main.html" class="btn-assemble">THEY'RE COMING</a>
+    </main>
+
+    <footer class="bottom-text">
+      Scroll disabled • Tap the button to continue
+    </footer>
+
+  </div>
+
+  <!-- MUSIC CONTROL SCRIPT -->
   <script>
     const music = document.getElementById("bg-music");
-
-    // Restore previous volume/mute state
     const savedMuted = localStorage.getItem("musicMuted");
 
     if (savedMuted === "true") {
       music.muted = true;
-    } else {
-      music.muted = false;
     }
 
-    // Unmute on first user interaction
     document.addEventListener("click", () => {
       if (localStorage.getItem("hasInteracted") !== "true") {
         music.muted = false;
@@ -85,10 +93,10 @@
       }
     });
 
-    // Save mute/unmute state automatically
     music.onvolumechange = () => {
       localStorage.setItem("musicMuted", music.muted);
     };
   </script>
+
 </body>
 </html>
