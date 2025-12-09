@@ -617,7 +617,7 @@ body {
   width: 100%;
   display: block;
   object-fit: cover;
-  max-height: 220px;
+  max-height: 450px;
 }
 
 /* Card text + button */
@@ -1894,4 +1894,7 @@ body {
     font-weight: bold;
     color: #ffbaba;
   }
+}
+.left-logo {
+    width: 150px;
 }
