@@ -1,260 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title> Aventrix'25 — Agenda</title>
-  <!-- keep your existing style + horror fonts -->
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Creepster&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda – Stranger Bytes '25</title>
 
+  <!-- Only this CSS affects agenda.html -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-main page-agenda">
-   <audio id="bg-music" autoplay loop hidden>
-  <source src="stranger_things.mp3" type="audio/mp3">
-</audio>
-  <!-- Optional Upside-Down transition overlay (if you're using it site-wide) -->
-  <div class="upside-down-transition" id="transition"></div>
 
-  <!-- Top banner (logos + college) -->
-  <div class="top-banner">
-    <img src="csi logo2.png" class="banner-logo left-logo" alt="Left Logo">
-    <div class="banner-text">
-      <div class="college-name">KONGU ENGINEERING COLLEGE</div>
-      <div class="club-name">Computer Society of India</div>
-    </div>
-    <img src="csi_logo.png" class="banner-logo right-logo" alt="Right Logo">
-  </div>
+<body class="agenda-body">
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="nav-logo glitch" data-text=" Aventrix'25"> Aventrix'25</div>
-    <nav>
-      <a href="main.html">Home</a>
-      <a href="tech.html">Events</a>
-      <a href="agenda.html">Event Details</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
+  <div class="agenda-container">
 
-  <!-- ticker -->
-  <div class="ticker main-ticker">
-    <div class="ticker-inner"> Aventrix'25 • AGENDA • CHECK TIMINGS • REGISTER FOR EVENTS •</div>
-  </div>
-
-  <!-- PAGE HERO -->
-  <main class="agenda-main">
-    <section class="agenda-card">
-      <header class="agenda-header">
-        <h1 class="agenda-title"> Aventrix'25</h1>
-        <h2 class="agenda-sub">Event Schedule & Agenda</h2>
-        <p class="agenda-intro">Below is the full timetable for the symposium — technical and non-technical events, venues, and registration links. Click View to read the event details or Register to open the event's Google Form.</p>
-      </header>
-
-      <!-- agenda table -->
-      <div class="agenda-wrap">
-        <table class="agenda-table" aria-label="Events agenda">
-          <thead>
-            <tr>
-              <th>Time</th>
-              <th>Event</th>
-              <th>Type</th>
-              <th>Venue</th>
-              <th>Coordinators</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <!-- sample rows — update text & links -->
-            <tr>
-              <td><strong>09:00</strong><br>Registration</td>
-              <td>Welcome & Opening</td>
-              <td>General</td>
-              <td>Main Auditorium</td>
-              <td>Prof. Ramesh</td>
-              <td><a href="main.html#opening" class="btn small">View</a></td>
-            </tr>
-
-            <tr>
-              <td>10:00 – 11:00</td>
-              <td>Mind Flayer Coding Showdown</td>
-              <td>Technical</td>
-              <td>IT Lab 1</td>
-              <td>Arun (99999 11111)</td>
-              <td>
-                <a href="mindflayer.html" class="btn small">View</a>
-                <a href="https://docs.google.com/forms/d/e/FORM_LINK_EVENT1/viewform" class="btn small inverted" target="_blank">Register</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td>11:15 – 12:00</td>
-              <td>80’s Hawkins Quiz</td>
-              <td>Non-Tech</td>
-              <td>Seminar Hall</td>
-              <td>Priya (99999 22222)</td>
-              <td>
-                <a href="nt-quiz.html" class="btn small">View</a>
-                <a href="https://docs.google.com/forms/d/e/FORM_LINK_EVENT2/viewform" class="btn small inverted" target="_blank">Register</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td>12:15 – 13:00</td>
-              <td>Vecna’s Debug Room</td>
-              <td>Technical</td>
-              <td>IT Lab 2</td>
-              <td>Karthik (99999 33333)</td>
-              <td>
-                <a href="vecna-debug.html" class="btn small">View</a>
-                <a href="https://docs.google.com/forms/d/e/FORM_LINK_EVENT3/viewform" class="btn small inverted" target="_blank">Register</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td>14:00 – 15:00</td>
-              <td>Hellfire Game Zone</td>
-              <td>Non-Tech</td>
-              <td>Cafeteria</td>
-              <td>Maya (99999 44444)</td>
-              <td>
-                <a href="nt-hellfire.html" class="btn small">View</a>
-                <a href="https://docs.google.com/forms/d/e/FORM_LINK_EVENT4/viewform" class="btn small inverted" target="_blank">Register</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td>15:15 – 16:30</td>
-              <td>Hawkins Hacker Hunt</td>
-              <td>Technical</td>
-              <td>Cyber Lab</td>
-              <td>Ravi (99999 55555)</td>
-              <td>
-                <a href="hacker-hunt.html" class="btn small">View</a>
-                <a href="https://docs.google.com/forms/d/e/FORM_LINK_EVENT5/viewform" class="btn small inverted" target="_blank">Register</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td>17:00 – 18:00</td>
-              <td>Strange Talent Hunt (Finals)</td>
-              <td>Non-Tech</td>
-              <td>Auditorium</td>
-              <td>Sneha (99999 66666)</td>
-              <td>
-                <a href="nt-talent.html" class="btn small">View</a>
-                <a href="https://docs.google.com/forms/d/e/FORM_LINK_EVENT6/viewform" class="btn small inverted" target="_blank">Register</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td>18:30</td>
-              <td>Prize Distribution & Closing</td>
-              <td>General</td>
-              <td>Auditorium</td>
-              <td>Organising Team</td>
-              <td><a href="main.html#closing" class="btn small">View</a></td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-  <div class="footer-inner">
-
-    <!-- LEFT COLUMN -->
-    <div class="footer-col footer-col-left">
-      <h4 class="footer-brand">AVENTRIX'24</h4>
-      <p class="footer-desc">
-        The Department of Computer Society of India at Kongu Engineering College, Perundurai hosts a highly enjoyable symposium.
+    <header class="agenda-header">
+      <h1>STRANGER BYTES ’25</h1>
+      <p class="agenda-subtitle">Event Schedule & Agenda</p>
+      <p class="agenda-description">
+        Full timetable for the symposium. Click View for details or Register to submit your Google Form.
       </p>
-      <p class="footer-cta">
-        <a href="main.html">Celebrate Innovation with AVENTRIX'24</a>
-      </p>
-    </div>
+    </header>
 
-    <!-- MIDDLE COLUMN -->
-    <div class="footer-col footer-col-mid">
-      <h5>Links</h5>
-      <ul class="footer-links">
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="main.html">Events</a></li>
-        <li><a href="agenda.html">Agenda</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
+    <!-- Table Wrapper -->
+    <div class="agenda-table-wrapper">
+      <table class="agenda-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Event</th>
+            <th>Type</th>
+            <th>Venue</th>
+            <th>Coordinator</th>
+            <th>Action</th>
+          </tr>
+        </thead>
 
-    <!-- RIGHT COLUMN -->
-    <div class="footer-col footer-col-right">
-      <h5>Contact</h5>
-      <p class="contact-line">📞 +91 98765 43210, +91 94444 77788</p>
-      <p class="contact-line">✉️ csiclub2025@gmail.com</p>
-      <p class="contact-line">📍 KONGU ENGINEERING COLLEGE, Perundurai, Erode - 638 052, Tamilnadu, India</p>
+        <tbody>
+
+          <tr>
+            <td>09:00</td>
+            <td>Opening Ceremony</td>
+            <td>General</td>
+            <td>Main Auditorium</td>
+            <td>Prof. Raman</td>
+            <td>
+              <a href="#" class="agenda-btn view">View</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>10:00 – 11:00</td>
+            <td>Dustin’s Idea Surge</td>
+            <td>Technical</td>
+            <td>IT Lab 1</td>
+            <td>Arun</td>
+            <td>
+              <a href="Dustin’s Idea Surge.html" class="agenda-btn view">View</a>
+              <a href="#" class="agenda-btn register">Register</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>11:15 – 12:00</td>
+            <td>Steve’s Code Run</td>
+            <td>Technical</td>
+            <td>IT Lab 2</td>
+            <td>Priya</td>
+            <td>
+              <a href="Steve’s Code Run.html" class="agenda-btn view">View</a>
+              <a href="#" class="agenda-btn register">Register</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>12:15 – 13:00</td>
+            <td>Eleven’s AI Vision</td>
+            <td>Technical</td>
+            <td>Seminar Hall</td>
+            <td>Karthik</td>
+            <td>
+              <a href="Eleven’s AI Vision.html" class="agenda-btn view">View</a>
+              <a href="#" class="agenda-btn register">Register</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>14:00 – 15:00</td>
+            <td>Hopper’s Bot Patrol</td>
+            <td>Technical</td>
+            <td>Robotics Lab</td>
+            <td>Maya</td>
+            <td>
+              <a href="Hopper’s Bot Patrol.html" class="agenda-btn view">View</a>
+              <a href="#" class="agenda-btn register">Register</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>15:15 – 16:00</td>
+            <td>Max’s Neon Design Dash</td>
+            <td>Non-Technical</td>
+            <td>Design Studio</td>
+            <td>Sneha</td>
+            <td>
+              <a href="Max’s Neon Design Dash.html" class="agenda-btn view">View</a>
+              <a href="#" class="agenda-btn register">Register</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>16:15 – 17:00</td>
+            <td>Vecna’s Illusion Forge</td>
+            <td>Technical</td>
+            <td>Lab 3</td>
+            <td>Ravi</td>
+            <td>
+              <a href="Vecna’s Illusion Forge.html" class="agenda-btn view">View</a>
+              <a href="#" class="agenda-btn register">Register</a>
+            </td>
+          </tr>
+          <tr>
+            <td>16:15 – 17:00</td>
+            <td>Robin's</td>
+            <td>Technical</td>
+            <td>Lab 3</td>
+            <td>Ravi</td>
+            <td>
+              <a href="Robin’s Story Archives.html" class="agenda-btn view">View</a>
+              <a href="#" class="agenda-btn register">Register</a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
     </div>
 
   </div>
-
-  <!-- FOOTER BOTTOM -->
-  <div class="footer-bottom">
-    <p class="footer-copy">© AVENTRIX'24. All Rights Reserved</p>
-
-    <div class="made-by">Made with ❤️ by <strong>team</strong></div>
-
-    <div class="footer-socials">
-      <a href="#" target="_blank" class="social-icon">
-        <img src="assets/instagram.png" alt="Instagram">
-      </a>
-      <a href="#" target="_blank" class="social-icon">
-        <img src="assets/linkedin.png" alt="LinkedIn">
-      </a>
-    </div>
-  </div>
-</footer>
-
-  <!-- Upside transition + horror effects scripts (if you use them) -->
-  <script>
-    // play the Upside-Down animation on link click (if your transition exists)
-    const transition = document.getElementById("transition");
-    function playTransition() {
-      if (!transition) return;
-      transition.style.animation = "none";
-      void transition.offsetWidth;
-      transition.style.animation = "upsideEnter 1.4s ease forwards";
-    }
-    document.querySelectorAll('a[target!="_blank"]').forEach(a => {
-      a.addEventListener('click', playTransition);
-    });
-  </script>
 
 </body>
-<script>
-  const music = document.getElementById("bg-music");
-
-  // Restore previous volume/mute state
-  const savedMuted = localStorage.getItem("musicMuted");
-
-  if (savedMuted === "true") {
-    music.muted = true;
-  } else {
-    music.muted = false;
-  }
-
-  // Unmute on first user interaction
-  document.addEventListener("click", () => {
-    if (localStorage.getItem("hasInteracted") !== "true") {
-      music.muted = false;
-      localStorage.setItem("hasInteracted", "true");
-      localStorage.setItem("musicMuted", "false");
-    }
-  });
-
-  // Save mute/unmute state automatically
-  music.onvolumechange = () => {
-    localStorage.setItem("musicMuted", music.muted);
-  };
-</script>
 </html>
