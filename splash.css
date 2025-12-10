@@ -28,7 +28,7 @@ body {
   min-height: 100vh;
   width: 100%;
   background:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.50)),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.95)),
     url("home page.webp") center center/cover no-repeat;
   display: flex;
   flex-direction: column;
@@ -38,19 +38,10 @@ body {
   padding: 10px 16px 18px;
 }
 
-/* overlay if needed (keeps hero darker) */
-.landing-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  z-index: 2;
-}
-
 /* bottom message */
 .bottom-text {
   font-size: 0.75rem;
   opacity: 0.7;
-  z-index: 12;
 }
 
 /* =========================
@@ -71,7 +62,6 @@ body {
   backdrop-filter: blur(10px);
   border-radius: 18px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.45);
-  z-index: 11;
 }
 
 .banner-logo {
@@ -113,10 +103,9 @@ body {
   justify-content: center;
   gap: 18px;
   padding: 0 16px;
-  z-index: 11; /* above overlay */
 }
 
-/* Stranger Things style title block (legacy .st-title preserved) */
+/* Stranger Things style title block */
 .st-title {
   display: flex;
   align-items: center;
@@ -139,7 +128,7 @@ body {
   line-height: 0.8;
 }
 
-/* Stranger Things style text (legacy, kept for compatibility) */
+/* Stranger Things style text */
 .st-text {
   font-family: "Cinzel", serif;
   font-weight: 700;
@@ -172,7 +161,6 @@ body {
   max-width: 24rem;
   font-size: 0.95rem;
   opacity: 0.9;
-  z-index: 11;
 }
 
 /* button */
@@ -193,7 +181,6 @@ body {
     0 0 30px rgba(0, 0, 0, 1);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  z-index: 11;
 }
 
 .btn-assemble:hover {
@@ -220,137 +207,6 @@ body {
       0 0 55px #ff0000,
       0 0 90px rgba(255, 0, 0, 1);
   }
-}
-
-/* =========================
-   NEON TITLE BLOCK (NEW) - scoped and safe
-   ========================= */
-
-/* wrapper */
-.neon-hero{
-  width:100%;
-  max-width: 1120px;
-  margin: 12px auto 0;
-  text-align:center;
-  position: relative;
-  z-index: 11;
-  pointer-events: none; /* decorative only */
-}
-
-/* TOP neon bar */
-.neon-top{
-  height:6px;
-  margin:0 auto 10px;
-  width:86%;
-  max-width:600px;
-  border-radius:6px;
-  background: linear-gradient(90deg, rgba(255,30,30,1), rgba(255,90,90,0.95));
-  box-shadow: 0 0 18px rgba(255,40,40,0.85), 0 0 34px rgba(246, 7, 7, 0.45);
-  position: relative;
-  z-index: 2;
-}
-
-/* main text block */
-.neon-title{
-  display:inline-block;
-  margin: 6px 0 4px; /* pulls title up near top bar */
-  position: relative;
-  line-height: 0.86;
-  pointer-events: auto; /* allow accessibility focus if needed */
-}
-
-/* the big word (AVENTRIX) */
-.neon-title .word{
-  display:block;
-  font-family: "Cinzel", serif;
-  font-weight: 900;
-  font-size: 96px;
-  color: #030202;
-  -webkit-text-stroke: 3.2px #ff1a1a;
-  text-stroke: 3.2px #ff1a1a;
-  text-shadow:
-    0 0 8px rgba(255,40,40,0.95),
-    0 0 20px rgba(255,30,30,0.85),
-    0 0 48px rgba(255,18,18,0.6),
-    0 10px 40px rgba(0,0,0,0.6);
-  padding: 1px 18px;
-  transform: translateY(-2px);
-  letter-spacing: 0.02em;
-  display: inline-block;
-}
-
-/* bottom group: two short lines with the year centered */
-.neon-bottom{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap: 10px;
-  margin-top: 2px;
-  z-index: 2;
-}
-
-/* the small neon bars */
-.neon-bottom .line{
-  width: 110px;
-  height:6px;
-  border-radius: 24px;
-  background: linear-gradient(90deg, rgba(255,30,30,1), rgba(255,75,75,0.95));
-  box-shadow: 0 0 12px rgba(255,40,40,0.9), 0 0 28px rgba(255,30,30,0.65);
-}
-
-/* the year text */
-.neon-bottom .year{
-  font-family: "Cinzel", serif;
-  font-weight: 700;
-  font-size: 38px;
-  color: #030202;
-  -webkit-text-stroke: 2px #ff1a1a;
-  text-stroke: 2px #ff1a1a;
-  text-shadow: 0 0 8px rgba(255,40,40,0.95), 0 0 22px rgba(255,30,30,0.8);
-  padding: 2px 8px;
-  transform: translateY(2px);
-  letter-spacing: 0.18em;
-}
-
-/* subtle breathing animation for neon glow */
-@keyframes neonPulse {
-  0%{ filter: drop-shadow(0 0 8px rgba(255,30,30,0.6)); opacity: 1 }
-  50%{ filter: drop-shadow(0 0 20px rgba(255,40,40,0.95)); opacity: 0.98 }
-  100%{ filter: drop-shadow(0 0 8px rgba(255,30,30,0.6)); opacity: 1 }
-}
-
-/* occasional flicker effect */
-@keyframes neonFlicker {
-  0%,18%,20%,22%,24%,100% { opacity:1; filter:none; }
-  19%,21%,23% { opacity:0.82; filter: blur(.6px) drop-shadow(0 0 10px rgba(255,0,0,0.35)); }
-}
-
-/* apply animations */
-.neon-title .word { animation: neonPulse 3.8s ease-in-out infinite; }
-.neon-bottom .year { animation: neonPulse 3.8s ease-in-out infinite; }
-.neon-title { animation: neonFlicker 9s linear infinite; }
-
-/* small vignette for cinematic effect */
-.neon-hero::before{
-  content:"";
-  pointer-events:none;
-  position:absolute;
-  inset:-30px;
-  z-index:0;
-  background: radial-gradient(60% 45% at 50% 45%, rgba(255,10,10,0.02), rgba(0,0,0,0.72));
-  mix-blend-mode: multiply;
-  border-radius: 6px;
-}
-
-/* =========================
-   ACCESSIBILITY (Reduce Motion)
-   ========================= */
-@media (prefers-reduced-motion: reduce) {
-  .neon-title .word,
-  .neon-bottom .year,
-  .neon-title { animation: none !important; }
-
-  .st-text { animation: none !important; }
 }
 
 /* =========================
@@ -400,12 +256,6 @@ body {
     padding: 0.8rem 2rem;
     font-size: 0.8rem;
   }
-
-  /* neon adjustments */
-  .neon-top { width:94%; margin-bottom: -6px; height:5px; }
-  .neon-title .word { font-size: 52px; -webkit-text-stroke:2px; padding:4px 10px; }
-  .neon-bottom .line { width: 64px; height:5px; }
-  .neon-bottom .year { font-size: 24px; -webkit-text-stroke:1.4px; letter-spacing:0.12em; transform:translateY(0); }
 }
 
 @media (max-width: 480px) {
@@ -438,22 +288,7 @@ body {
   .bottom-text {
     font-size: 0.7rem;
   }
-
-  .neon-top { width:98%; }
-  .neon-title .word { font-size: 44px; -webkit-text-stroke:1.6px; }
-  .neon-bottom .line { width: 52px; height:5px; }
-  .neon-bottom .year { font-size:18px; -webkit-text-stroke:1px; letter-spacing: .09em; }
 }
-
-/* small helper */
-.center-wrapper {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 18px;
-}
-
-/* keep the left logo wider if requested */
 .left-logo {
-  width: 150px;
+    width: 150px;
 }
