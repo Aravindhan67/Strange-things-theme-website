@@ -7,8 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="splash.css" />
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,10 +23,9 @@
 
   <!-- FULL-SCREEN HERO -->
   <div class="landing">
-    <!-- dark overlay over background image -->
     <div class="landing-overlay"></div>
 
-    <!-- top banner like poster -->
+    <!-- top banner -->
     <header class="top-banner">
       <img src="logo3.png" class="banner-logo left-logo" alt="Left Logo">
 
@@ -36,18 +37,24 @@
       <img src="csi_logo.png" class="banner-logo right-logo" alt="Right Logo">
     </header>
 
-    <!-- center content -->
+    <!-- CENTER CONTENT -->
     <main class="center-content">
-      <div class="st-title">
-        <div class="st-line"></div>
 
-        <div class="st-text-group">
-          <h1 class="st-text main-word">AVENTRIX</h1>
-          <h2 class="st-text sub-word">2025</h2>
+      <!-- ⭐ NEW STRANGER THINGS NEON TITLE ⭐ -->
+      <header class="neon-hero">
+        <div class="neon-top"></div>
+
+        <div class="neon-title">
+          <span class="word">AVENTRIX</span>
         </div>
 
-        <div class="st-line"></div>
-      </div>
+        <div class="neon-bottom">
+          <div class="line left"></div>
+          <div class="year">2025</div>
+          <div class="line right"></div>
+        </div>
+      </header>
+      <!-- END NEON TITLE -->
 
       <p class="tagline">
         Enter the Upside Down and be a part of the adventure.
@@ -64,19 +71,14 @@
     </footer>
   </div>
 
+
+  <!-- MUSIC HANDLER -->
   <script>
     const music = document.getElementById("bg-music");
-
-    // Restore previous volume/mute state
     const savedMuted = localStorage.getItem("musicMuted");
 
-    if (savedMuted === "true") {
-      music.muted = true;
-    } else {
-      music.muted = false;
-    }
+    music.muted = savedMuted === "true";
 
-    // Unmute on first user interaction
     document.addEventListener("click", () => {
       if (localStorage.getItem("hasInteracted") !== "true") {
         music.muted = false;
@@ -85,10 +87,9 @@
       }
     });
 
-    // Save mute/unmute state automatically
-    music.onvolumechange = () => {
+    music.onvolumechange = () =>
       localStorage.setItem("musicMuted", music.muted);
-    };
   </script>
+
 </body>
 </html>
