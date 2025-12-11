@@ -844,7 +844,7 @@ body {
   width: 100%;
   display: block;
   object-fit: cover;
-  max-height: 500px;
+  max-height: 510px;
 }
 
 .tech-card-body {
